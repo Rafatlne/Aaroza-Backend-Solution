@@ -1,0 +1,23 @@
+{
+  "name": "backend_solution",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rafatlne/Aaroza-Backend-Solution.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rafatlne/Aaroza-Backend-Solution/issues"
+  },
+  "homepage": "https://github.com/Rafatlne/Aaroza-Backend-Solution#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

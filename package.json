@@ -1,23 +1,17 @@
 {
-  "name": "backend_solution",
+  "name": "aaroza-code-challenge",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Rafatlne/Aaroza-Backend-Solution.git"
+    "start": "node server",
+    "dev": "nodemon server"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Rafatlne/Aaroza-Backend-Solution/issues"
-  },
-  "homepage": "https://github.com/Rafatlne/Aaroza-Backend-Solution#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemon": "^1.19.3"
   }
 }

@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const User = require('../models/user');
+const config = require('../config/secret.json');
 
 router.post("/signup", (req, res, next) => {
     User.find({
@@ -34,7 +35,7 @@ router.post("/signup", (req, res, next) => {
                                 const token = jwt.sign({
                                         username: req.body.username,
                                     },
-                                    process.env.JWT_KEY, {
+                                    config.SECRET_KEY.JWT_KEY, {
                                         expiresIn: "1h"
                                     });
                                 console.log(result);
@@ -83,7 +84,7 @@ router.post("/login", (req, res, next) => {
                     const token = jwt.sign({
                             username: user[0].username,
                         },
-                        process.env.JWT_KEY, {
+                        config.SECRET_KEY.JWT_KEY, {
                             expiresIn: "1h"
                         });
 

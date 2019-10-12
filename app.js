@@ -7,13 +7,19 @@ const mongoose = require('mongoose');
 const actorRoutes = require('./api/routes/actors');
 const movieRoutes = require('./api/routes/movies');
 const userRoutes = require('./api/routes/users');
+const config = require('./api/config/secret.json');
 
 // Mongoose Connect
-mongoose.connect('mongodb://node-aaroza:' +
-    process.env.MONGO_ATLAS_PW +
+mongoose.connect('mongodb://node-aaroza:' + config.SECRET_KEY.MONGO_ATLAS_PW +
     '@node-aaroza-shard-00-00-mkjpe.mongodb.net:27017,node-aaroza-shard-00-01-mkjpe.mongodb.net:27017,node-aaroza-shard-00-02-mkjpe.mongodb.net:27017/test?ssl=true&replicaSet=node-aaroza-shard-0&authSource=admin&retryWrites=true&w=majority', {
         useNewUrlParser: true,
         useUnifiedTopology: true
+    }, (err, db) => {
+        if (err) {
+            console.log('Unable to connect to the Database. Please start the server. Error:', err);
+        } else {
+            console.log('Connected to Database successfully!');
+        }
     });
 mongoose.set('useCreateIndex', true);
 mongoose.Promise = global.Promise;

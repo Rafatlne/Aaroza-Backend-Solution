@@ -70,6 +70,11 @@ router.post('/', (req, res, next) => {
                             }
                         });
                     })
+                    .catch(err => {
+                        res.status(400).json({
+                            message: err
+                        });
+                    });
             } else {
                 res.status(400).json({
                     message: 'Give valid id for Actors'

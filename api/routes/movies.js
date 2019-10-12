@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-
+const checkAuth = require('../middleware/check-auth');
 const {
     Movie
 } = require('../models/movie');
@@ -11,7 +11,7 @@ const {
 
 
 // GET ROUTE
-router.get("/", (req, res, next) => {
+router.get("/", checkAuth, (req, res, next) => {
 
     Movie.find()
         .select("title year rating actors")

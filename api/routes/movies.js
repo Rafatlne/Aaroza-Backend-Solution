@@ -17,7 +17,6 @@ router.get("/", checkAuth, (req, res, next) => {
         .select("title year rating actors")
         .exec()
         .then(docs => {
-
             if (docs) {
                 res.status(200).json(docs);
             } else {
@@ -36,7 +35,7 @@ router.get("/", checkAuth, (req, res, next) => {
 
 
 // POST ROUTE
-router.post('/', (req, res, next) => {
+router.post("/", (req, res, next) => {
     const idList = req.body.actorId;
     Actor.find({
             _id: {
@@ -60,7 +59,7 @@ router.post('/', (req, res, next) => {
                     .then(result => {
                         console.log(result);
                         res.status(201).json({
-                            message: 'Created Product successfully',
+                            message: 'Created Movie successfully',
                             createdMovies: {
                                 _id: result._id,
                                 title: result.title,
@@ -70,11 +69,6 @@ router.post('/', (req, res, next) => {
                             }
                         });
                     })
-                    .catch(err => {
-                        res.status(400).json({
-                            message: err
-                        });
-                    });
             } else {
                 res.status(400).json({
                     message: 'Give valid id for Actors'

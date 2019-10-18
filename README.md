@@ -3,7 +3,7 @@
 ## Installation instructions
 1. First you have to install node package
     ```
-    node install
+    npm install
     ```
 2. To start the node server you have to use below command in terminal
     ```

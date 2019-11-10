@@ -1,4 +1,4 @@
-# Aaroza-Backend-Solution
+# Movie API
 
 ## Installation instructions
 1. First you have to install node package
